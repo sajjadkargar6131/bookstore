@@ -6,6 +6,8 @@
     <h3> {{book.title}} </h3>
     <h2> {{book.author}} </h2>
     <p>$ {{book.price}} </p>
+    <a href="{% url "book_detail" book.pk %}">توضیحات بیشتر</a>
+    <br>
     ***************************
   {% endfor %}
     

@@ -1,0 +1,12 @@
+{% extends "_base.html" %}
+
+{% block content %}
+
+  <h3> {{book.title}} </h3>
+  <p> {{book.description}} </p>
+  <small> $ {{book.price}} </small>
+  <br>
+  <a class="btn btn-warning mt-3" href="{% url "book_list" %}">Back</a> 
+{% endblock content %}
+
+
