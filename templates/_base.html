@@ -11,16 +11,6 @@
 <body>
     <div class="container">
         <h1>book store</h1>
-        {% if user.is_authenticated %}
-        <p>welcome {{user.username}}</p>
-        <form action="{% url 'logout' %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-warning">logout</button>
-        </form>
-        {% else %}
-        <p><a href="{% url 'login' %}">login</a></p>
-        <p><a href="{% url 'signup' %}">signup</a></p>
-        {% endif %}
         ---------------------------------------------------
         {% block content %}{% endblock content %}
     </div>
