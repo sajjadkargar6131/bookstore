@@ -3,10 +3,12 @@
 {% block content %}
 
   <h3> {{book.title}} </h3>
-  <p> {{book.description}} </p>
+  <p> {{book.description|linebreaks}} </p>
   <small> $ {{book.price}} </small>
   <br>
   <a class="btn btn-warning mt-3" href="{% url "book_list" %}">Back</a> 
+  <a class="btn btn-info mt-3" href="{% url "book_update" book.pk %}">Edit</a> 
+  <a class="btn btn-danger mt-3" href="{% url "book_delete" book.pk %}">Delete</a> 
 {% endblock content %}
 
 

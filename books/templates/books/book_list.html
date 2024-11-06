@@ -4,8 +4,9 @@
   <h3>list__Books</h3>
   <a class="btn btn-primary" href="{% url "book_create" %}">add book</a>
   {% for book in books  %}
-    <h3> {{book.title}} </h3>
+    <h3> {{book.title|capfirst}} </h3>
     <h2> {{book.author}} </h2>
+    <p> {{book.description|truncatewords:10}}</p>
     <a href="{{ book.get_absolute_url }}">توضیحات بیشتر</a>
     <br>
     ***************************
