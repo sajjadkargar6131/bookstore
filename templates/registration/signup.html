@@ -1,6 +1,7 @@
 {% extends '_base.html' %}
   {% block content %}
-      <form class="" action="" method="post">
+      <form class="form form-control" action="" method="post">
+        <p class="text-primary">welcome to book store. please signup</p>
         {% load crispy_forms_tags %}
           {% csrf_token %}
           {{form|crispy}}
