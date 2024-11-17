@@ -1,10 +1,14 @@
 {% extends '_base.html' %}
-  {% block content %}
-      <form class="form form-control" action="" method="post">
-        <p class="text-primary">welcome to book store. please signup</p>
-        {% load crispy_forms_tags %}
-          {% csrf_token %}
-          {{form|crispy}}
-          <button type="submit" class="btn btn-primary">Signup</button>
-      </form>
-  {% endblock content %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div class="container mt-2">
+    <form class="form form-control" action="" method="post">
+      <p class="text-primary">welcome to book store. please signup</p>
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button type="submit" class="btn btn-primary">Signup</button>
+    </form>
+  </div>
+{% endblock %}
