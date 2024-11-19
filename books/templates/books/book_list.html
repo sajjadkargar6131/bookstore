@@ -15,7 +15,7 @@
           <div class="d-flex flex-column justify-content-between h-100">
             <div class="card-body">
               <a class="text-decoration-none" href="{{book.get_absolute_url}}"><h3 class="card-title"><strong>{{ book.title|capfirst }}</strong></h3></a>
-              <p class="card-text pt-3">{{ book.description|truncatewords:30 }}</p>
+              <p class="card-text pt-3" style="text-align:justify">{{ book.description|truncatewords:30 }}</p>
               <p class="text-muted">نویسنده: {{ book.author }}</p>
             </div>
           </div>
@@ -24,6 +24,28 @@
     </div>
     {% endfor %}
   </div>
+</div>
+
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1">قبلی</a>
+      </li>
+    {% endif %}  
+    {% comment %} <li class="page-item"><a class="page-link" href="#">{{ page_obj.number }}</a></li> {% endcomment %}
+    {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">بعدی</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+<div class="container">
+  <span class="text-primary">
+    صفحه {{ page_obj.number }} از {{ page_obj.paginator.num_pages }}
+   </span>
 </div>
 {% endblock %}
 
