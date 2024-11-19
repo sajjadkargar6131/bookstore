@@ -42,15 +42,14 @@
                     <div class="card shadow my-3 p-5 w-sm-75 w-100">
                         <h2 class="mb-5">نظرات:</h2>
                         {% for comment in comments  %}
-                            <div class="border-bottom mb-3">
+                            <div class="border-bottom mb-2">
                                 <h5 class="mb-3 text-secondary">{{comment.user.username}}</h5>
                                 <p>{{comment.text}}</p>
                                 {% if comment.recomended %}
-                                <span class="badge bg-success">توصیه میشود</span>
+                                    <span class="badge bg-success mb-2">توصیه میشود</span>
                                 {% else %}
-                                <span class="badge bg-secondary">توصیه نمیشود</span>
+                                    <span class="badge bg-secondary mb-2">توصیه نمیشود</span>
                                 {% endif %}
-                               
                             </div>
                         {% endfor %}
                     </div>
